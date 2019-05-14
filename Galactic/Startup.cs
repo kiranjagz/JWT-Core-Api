@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Galactic.Services;
+using Galactic.Services.RestApi;
 using Galactic.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -69,18 +70,11 @@ namespace Galactic
                     TermsOfService = "None",
                     Contact = new Contact() { Name = "galacticfisherman", Email = "test@test.co.za", Url = "www.test.co.za" }
                 });
-
-                //c.AddSecurityDefinition("Bearer", new ApiKeyScheme()
-                //{
-                //    Description = "Authorization header using the Bearer scheme",
-                //    Name = "Authorization",
-                //    In = "header"
-                //});
-
             });
 
             // configure DI for application services
             services.AddScoped<IUserService, UserService>();
+            services.AddSingleton<IRandomApi, RandomApi>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -98,7 +92,7 @@ namespace Galactic
             {
                 app.UseHsts();
             }
-
+            app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseMvc();
             app.UseSwagger();
