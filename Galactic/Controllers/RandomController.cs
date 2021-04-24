@@ -40,7 +40,7 @@ namespace Galactic.Controllers
         [HttpGet()]
         [Route("getlistrandomfact/{type}")]
         [Authorize]
-        public async Task<ActionResult<IEnumerable<ResponseModel>>> GetListRandomFact(string type)
+        public async Task<ActionResult<IList<ResponseModel>>> GetListRandomFact(string type)
         {
             var list = new List<ResponseModel>();
 
@@ -53,7 +53,7 @@ namespace Galactic.Controllers
             }
 
             if (list.Count == 0)
-                return BadRequest("This list is empty yoh, check it out please ;)");
+                return BadRequest("This list is empty yoh, check it out please.)");
 
             return Ok(list);
         }

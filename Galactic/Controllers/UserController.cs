@@ -5,7 +5,6 @@ using Galactic.Models;
 
 namespace WebApi.Controllers
 {
-    //[Authorize]
     [ApiController]
     [Route("[controller]")]
     public class UsersController : ControllerBase
