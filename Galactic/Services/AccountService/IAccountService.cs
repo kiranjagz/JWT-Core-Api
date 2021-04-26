@@ -8,6 +8,8 @@ namespace Galactic.Services.AccountService
 {
     public interface IAccountService
     {
-        IList<IAccountModel> GetAccounts();
+        AccountResponseModel GetAccounts();
+
+        AccountResponseModel GetAccounts(string id);
     }
 }

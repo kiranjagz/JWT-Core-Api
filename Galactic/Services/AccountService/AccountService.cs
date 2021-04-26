@@ -40,9 +40,22 @@ namespace Galactic.Services.AccountService
                 }
             };
         }
-        public IList<IAccountModel> GetAccounts()
+        public AccountResponseModel GetAccounts()
         {
-            return _accountModels;
+            return new AccountResponseModel
+            {
+                Accounts = _accountModels,
+                Message = $"Successfully returnd accounts with id: {Guid.NewGuid()}"
+            };
+        }
+
+        public AccountResponseModel GetAccounts(string id)
+        {
+            return new AccountResponseModel
+            {
+                Accounts = _accountModels.Where(x => x.IdNumber == id).ToList(),
+                Message = $"Successfully returnd accounts with id: {Guid.NewGuid()}"
+            };
         }
     }
 }

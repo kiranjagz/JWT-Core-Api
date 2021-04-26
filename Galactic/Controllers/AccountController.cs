@@ -26,15 +26,14 @@ namespace Galactic.Controllers
             _accountService = accountService;
         }
 
-
         [HttpGet()]
-        [Route("getaccounts")]
-        [ProducesResponseType(typeof(List<IAccountModel>), (int)HttpStatusCode.OK)]
+        [Route("getallaccounts")]
+        [ProducesResponseType(typeof(AccountResponseModel), (int)HttpStatusCode.OK)]
         public IActionResult GetAccounts()
         {
             var accounts = _accountService.GetAccounts();
 
-            if (accounts.Count <= 0)
+            if (accounts.Accounts.Count <= 0)
             {
                 return BadRequest(_errorMessage);
             }
@@ -43,20 +42,20 @@ namespace Galactic.Controllers
         }
 
         [HttpGet()]
-        [Route("getaccounts/{id}")]
-        [ProducesResponseType(typeof(List<IAccountModel>), (int)HttpStatusCode.OK)]
+        [Route("getaccountsbyid/{id}")]
+        [ProducesResponseType(typeof(AccountResponseModel), (int)HttpStatusCode.OK)]
         public IActionResult GetAccounts(string id)
         {
-            var accounts = _accountService.GetAccounts();
+            var accounts = _accountService.GetAccounts(id);
 
-            var filterAccount = accounts.Where(x => x.IdNumber == id).ToList();
-
-            if (filterAccount.Count <= 0)
+            if (accounts.Accounts.Count <= 0)
             {
                 return BadRequest(_errorMessage);
             }
 
-            return Ok(filterAccount);
+            Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(accounts));
+
+            return Ok(accounts);
         }
     }
 }
