@@ -14,7 +14,7 @@ using Newtonsoft.Json;
 
 namespace Galactic.Core.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AccountController : ControllerBase

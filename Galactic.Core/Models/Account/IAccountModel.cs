@@ -16,6 +16,7 @@ namespace Galactic.Models.Account
     public enum AccountType
     {
         Cheque,
-        Investment
+        Investment,
+        Redbucks
     }
 }

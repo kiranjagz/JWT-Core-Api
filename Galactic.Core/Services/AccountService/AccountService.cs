@@ -1,4 +1,5 @@
-﻿using Galactic.Models.Account;
+﻿using Galactic.Core.Models.Account;
+using Galactic.Models.Account;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,20 @@ namespace Galactic.Core.Services.AccountService
                     InterestEarned = 1450.55m,
                     InterestRate = 3.45m,
                     AccountType = AccountType.Investment.ToString()
+                },
+                new RedbucksAccountModel
+                {
+                    IdNumber = "1000",
+                    AccountType  = AccountType.Redbucks.ToString(),
+                    AvailableBalance = 35000.00m,
+                    TotalBalance = 45000.00m
+                },
+                 new RedbucksAccountModel
+                {
+                    IdNumber = "2000",
+                    AccountType  = AccountType.Redbucks.ToString(),
+                    AvailableBalance = 5000.00m,
+                    TotalBalance = 18000.00m
                 }
             };
         }
