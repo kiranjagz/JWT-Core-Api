@@ -11,6 +11,7 @@ using HttpGetAttribute = Microsoft.AspNetCore.Mvc.HttpGetAttribute;
 using AuthorizeAttribute = Microsoft.AspNetCore.Authorization.AuthorizeAttribute;
 using Galactic.Core.Services.AccountService;
 using Newtonsoft.Json;
+using Galactic.Core.Models.Account;
 
 namespace Galactic.Core.Controllers
 {
@@ -56,6 +57,37 @@ namespace Galactic.Core.Controllers
             Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(accounts));
 
             return Ok(accounts);
+        }
+
+        [HttpGet()]
+        [Route("getnotifications/{id}")]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.OK)]
+        public IActionResult GetNotifications(string id)
+        {
+            string notification = string.Empty;
+
+            var account = _accountService.GetAccounts(id)
+                .Accounts
+                .Where(account => account.AccountType == AccountType.Cheque.ToString())
+                .FirstOrDefault();
+
+            if (account.AvailableBalance > 7300.00m)
+            {
+                notification = "Sir, you qualify for a overdraft!";
+            }
+            else
+            {
+                notification = "Oh no, you do not qualify for a overdraft!";
+            }
+
+            var notificationModel = new NotificationModel()
+            {
+                Id = id,
+                AvailableBalance = account.AvailableBalance,
+                Message = notification
+            };
+
+            return Ok(notificationModel);
         }
     }
 }

@@ -25,8 +25,8 @@ namespace Galactic.Core.Services.AccountService
                 new ChequeAccountModel
                 {
                     IdNumber = "2000",
-                    AvailableBalance = 2000.00m,
-                    TotalBalance = 4000.00m,
+                    AvailableBalance = 12000.00m,
+                    TotalBalance = 14000.00m,
                     OverDraftBalance = 2000.00m,
                     AccountType = AccountType.Cheque.ToString()
                 },
@@ -50,7 +50,7 @@ namespace Galactic.Core.Services.AccountService
                 {
                     IdNumber = "2000",
                     AccountType  = AccountType.Redbucks.ToString(),
-                    AvailableBalance = 5000.00m,
+                    AvailableBalance = 15000.00m,
                     TotalBalance = 18000.00m
                 }
             };
