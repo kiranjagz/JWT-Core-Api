@@ -9,7 +9,7 @@ namespace Galactic.Core.Services.AccountService
 {
     public class AccountService : IAccountService
     {
-        private IList<IAccountModel> _accountModels;
+        private readonly IList<IAccountModel> _accountModels;
         public AccountService()
         {
             _accountModels = new List<IAccountModel>
