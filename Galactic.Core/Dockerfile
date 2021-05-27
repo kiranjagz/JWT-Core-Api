@@ -2,9 +2,9 @@
 
 FROM mcr.microsoft.com/dotnet/aspnet:3.1 AS base
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
-# ENV ASPNETCORE_URLS=http://*:5000
+EXPOSE 5004
+#EXPOSE 443
+ENV ASPNETCORE_URLS=http://*:5004
 # ENV ASPNETCORE_URLS=https://*:5001
 # ENV ASPNETCORE_HTTPS_PORT=5001
 # ENV ASPNETCORE_Kestrel__Certificates__Default__Password="password"

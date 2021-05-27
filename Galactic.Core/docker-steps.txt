@@ -1,0 +1,4 @@
+﻿## Build the app
+docker build . -t galactic:1.1 <name:version>
+## Run image
+docker run --rm -it  -p 5004:5004/tcp galactic:1.1 <port<s,d> <image:version>

@@ -54,7 +54,7 @@ namespace Galactic.Core.Controllers
                 return BadRequest(_errorMessage);
             }
 
-            Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(accounts));
+            Console.WriteLine(JsonConvert.SerializeObject(accounts));
 
             return Ok(accounts);
         }
