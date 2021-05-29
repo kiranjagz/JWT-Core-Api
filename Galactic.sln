@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Galactic.Core", "Galactic.Core\Galactic.Core.csproj", "{46F50F9D-FE17-4909-8D79-12E57CCFB651}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Galactic.Tests", "Galactic.Tests\Galactic.Tests.csproj", "{B18F2829-77FD-4882-9596-B045DD172A81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Galactic.Tests", "Galactic.Tests\Galactic.Tests.csproj", "{B18F2829-77FD-4882-9596-B045DD172A81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Galactic.Services", "Galactic.Services\Galactic.Services.csproj", "{1894EA41-337E-44C7-99FE-9F73A6286E92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B18F2829-77FD-4882-9596-B045DD172A81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B18F2829-77FD-4882-9596-B045DD172A81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B18F2829-77FD-4882-9596-B045DD172A81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1894EA41-337E-44C7-99FE-9F73A6286E92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1894EA41-337E-44C7-99FE-9F73A6286E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1894EA41-337E-44C7-99FE-9F73A6286E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1894EA41-337E-44C7-99FE-9F73A6286E92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

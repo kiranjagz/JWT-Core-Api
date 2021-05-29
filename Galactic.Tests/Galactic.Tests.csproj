@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Galactic.Core\Galactic.Core.csproj" />
+    <ProjectReference Include="..\Galactic.Services\Galactic.Services.csproj" />
   </ItemGroup>
 
 </Project>
