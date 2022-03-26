@@ -12,7 +12,7 @@ ENV ASPNETCORE_URLS=http://*:5004
 
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /src
-COPY ["Galactic.Core.csproj", "Galactic.Core/"]
+COPY ./src .
 RUN dotnet restore "Galactic.Core/Galactic.Core.csproj"
 WORKDIR "/src/Galactic.Core"
 COPY . .
